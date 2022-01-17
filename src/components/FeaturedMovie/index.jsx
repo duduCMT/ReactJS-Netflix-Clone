@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button'
 import './styles.css'
 
 export default function FeaturedMovie({ item }) {
@@ -31,8 +32,8 @@ export default function FeaturedMovie({ item }) {
               {item.overview}
             </div>
             <div className="featured__buttons">
-              <button className='featured__watch-button'>► Assistir</button>
-              <button className='featured__list-button'>+ Minha Lista</button>
+              <Button title="► Assistir" type="watch" />
+              <Button title="+ Minha Lista" type="list" />
             </div>
             <div className="featured__genres">
               <strong>Gêneros:</strong> {genres.join(', ')}
