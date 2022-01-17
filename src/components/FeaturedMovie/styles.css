@@ -1,5 +1,12 @@
 .featured {
   height: 100vh;
+  animation: imageAnimation 10s ease-in-out .5s forwards;
+}
+
+@keyframes imageAnimation {
+  to {
+    background-position: 20% center;
+  }
 }
 
 .featured__vertical {
