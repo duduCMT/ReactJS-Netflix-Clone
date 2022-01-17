@@ -13,6 +13,13 @@ export default function App() {
   const [movieList, setMovieList] = useState([])
   const [featuredData, setFeaturedData] = useState(null)
   const [blackHeader, setBlackHeader] = useState(false)
+  const [showLoading, setShowLoading] = useState(true)
+
+  setTimeout(
+    () => setShowLoading(false),
+    2000
+  )
+
 
   useEffect(() => {
     async function loadAll(){
@@ -45,22 +52,23 @@ export default function App() {
     <div className='page'>
       <Header black={blackHeader} />
 
-      
-
-      {featuredData &&
-        <FeaturedMovie item={featuredData} />
-      }
-      
-      <section className="lists">
-        {movieList.map(({title, items}, key) => (
-          <MovieRow key={key} title={title} items={items}/>
-        ))}
-      </section>
-
-      <Footer />
+      {movieList.length != 0 && !showLoading ?
+        <>
+          {featuredData && <FeaturedMovie item={featuredData} /> }
           
-      <Loading />
+          <section className="lists">
+            {movieList.map(({title, items}, key) => (
+              <MovieRow key={key} title={title} items={items}/>
+            ))}
+          </section>
 
+          <Footer />
+        </>
+      :
+        <div className='loading__area'>
+          <Loading />
+        </div>
+      }
     </div>
   )
 }
