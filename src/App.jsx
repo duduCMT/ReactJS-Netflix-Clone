@@ -7,6 +7,7 @@ import './App.css'
 import FeaturedMovie from './components/FeaturedMovie'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Loading from './components/Loading'
 
 export default function App() {
   const [movieList, setMovieList] = useState([])
@@ -44,6 +45,8 @@ export default function App() {
     <div className='page'>
       <Header black={blackHeader} />
 
+      
+
       {featuredData &&
         <FeaturedMovie item={featuredData} />
       }
@@ -55,6 +58,9 @@ export default function App() {
       </section>
 
       <Footer />
+          
+      <Loading />
+
     </div>
   )
 }
