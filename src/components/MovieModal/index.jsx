@@ -5,6 +5,7 @@ import Button from '../Button'
 import CircleIconButton from '../CircleIconButton'
 import CloseButton from '../CloseButton'
 import Loading from '../Loading'
+import MainMovieInfo from '../MainMovieInfo'
 
 import './styles.css'
 
@@ -62,10 +63,31 @@ export default function MovieModal({isOpen, closeModal, item}) {
             </div>
           </section>
           
-          <section className='movie-modal__infoarea'>
-            <h2 className='movie-modal__title'>{movieInfo.name}</h2>
-            <p className='movie-modal__overview'>{movieInfo.overview}</p>
+          <section style={{display: "flex", paddingLeft: 32, paddingRight: 32, gap: 16}}>
+            <section className='movie-modal__infoarea'>
+              <h2 className='movie-modal__title'>{movieInfo.name}</h2>
+              <MainMovieInfo info={movieInfo} fontSize={14} />
+              <p className='movie-modal__overview'>{movieInfo.overview}</p>
+            </section>
+
+            <asice className='movie-modal__castingarea'>
+              <p>
+                <span>Criado por: </span>
+                {movieInfo.created_by.map((value) => value.name).join(', ')}.
+              </p>
+
+              <p>
+                <span>Gêneros: </span>
+                {movieInfo.genres.map((value) => value.name).join(', ')}.
+              </p>
+
+              <p>
+                <span>Disponível em: </span>
+                {movieInfo.networks.map((value) => value.name).join(', ')}.
+              </p>
+            </asice>
           </section>
+          
           
         </div>
         : <div className='movie-modal__loading'><Loading /></div>

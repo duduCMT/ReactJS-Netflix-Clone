@@ -3,6 +3,7 @@
   display: inline-block;
   width: 960px;
   border-radius: 8px;
+  padding-bottom: 32px;
 }
 
 .movie-modal__overlay {
@@ -59,19 +60,34 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 32px;
+  padding: 0 32px 42px 32px;
   gap: 8px;
 }
 
 .movie-modal__infoarea {
-  padding: 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 2;
+}
+
+.movie-modal__castingarea {
+  flex: 1;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.movie-modal__castingarea p span {
+  color: #777;
 }
 
 .movie-modal__title {
+  margin: 0;
   font-size: 32px;
 }
 
 .movie-modal__overview {
+  margin: 0;
   line-height: 160%;
   font-size: 14px;
 }

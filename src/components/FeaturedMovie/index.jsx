@@ -4,7 +4,6 @@ import MainMovieInfo from '../MainMovieInfo'
 import './styles.css'
 
 export default function FeaturedMovie({ item }) {
-  const firstDate = new Date(item.first_air_date)
   const genres = item.genres.map((value) => value.name)
 
   return (
