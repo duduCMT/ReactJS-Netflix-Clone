@@ -63,6 +63,19 @@
   gap: 8px;
 }
 
+.movie-modal__infoarea {
+  padding: 0px 32px;
+}
+
+.movie-modal__title {
+  font-size: 32px;
+}
+
+.movie-modal__overview {
+  line-height: 160%;
+  font-size: 14px;
+}
+
 @media (max-width: 1024px) {
   .movie-modal {
     width: 90%;

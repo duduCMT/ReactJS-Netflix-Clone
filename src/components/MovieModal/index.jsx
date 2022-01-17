@@ -20,8 +20,8 @@ export default function MovieModal({isOpen, closeModal, item}) {
 
   useEffect(() => {
     async function loadCompleteItem(){
-      console.log(item)
       let completeItemInfo = await getMovieInfo(item.id, 'tv')
+      console.log(completeItemInfo)
       setMovieInfo(completeItemInfo)
     }
 
@@ -62,8 +62,11 @@ export default function MovieModal({isOpen, closeModal, item}) {
             </div>
           </section>
           
-          <h2>{movieInfo.name}</h2>
-          <p>Modal Body</p>
+          <section className='movie-modal__infoarea'>
+            <h2 className='movie-modal__title'>{movieInfo.name}</h2>
+            <p className='movie-modal__overview'>{movieInfo.overview}</p>
+          </section>
+          
         </div>
         : <div className='movie-modal__loading'><Loading /></div>
       }

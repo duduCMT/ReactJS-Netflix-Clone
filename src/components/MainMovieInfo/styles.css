@@ -1,0 +1,19 @@
+.mmi {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.mmi__relevante {
+  color: #46d369;
+}
+
+.mmi__info-header {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-weight: bold;
+}

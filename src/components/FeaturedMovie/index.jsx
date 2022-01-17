@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../Button'
+import MainMovieInfo from '../MainMovieInfo'
 import './styles.css'
 
 export default function FeaturedMovie({ item }) {
@@ -17,17 +18,7 @@ export default function FeaturedMovie({ item }) {
         <div className="featured__horizontal">
           <div className="featured__name">{item.original_name}</div>
           <div className="featured__info">
-            <div className='featured__info-header'>
-              <div className="featured__points">
-                {item.vote_average} pontos
-              </div>
-              <div className="featured__year">
-                {firstDate.getFullYear()}
-              </div>
-              <div className="featured__seasons">
-                {item.number_of_seasons} Temporada{item.number_of_seasons !== 1 ? 's' : ''}
-              </div>
-            </div>
+            <MainMovieInfo info={item} />
             <div className="featured__description">
               {item.overview}
             </div>

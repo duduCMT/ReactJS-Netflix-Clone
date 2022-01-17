@@ -41,17 +41,6 @@
   gap: 16px;
 }
 
-.featured__points {
-  color: #46d369;
-}
-
-.featured__info-header {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  font-weight: bold;
-}
-
 .featured__buttons {
   display: flex;
   gap: 8px;
