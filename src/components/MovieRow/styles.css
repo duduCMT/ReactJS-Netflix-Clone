@@ -34,6 +34,15 @@
   transform: scale(1);
 }
 
+.movieRow__arrow {
+  transition: all ease .3s;
+}
+
+.movieRow__left:hover .movieRow__arrow, 
+.movieRow__right:hover .movieRow__arrow {
+  transform: scale(1.2);
+}
+
 .movieRow__left,
 .movieRow__right {
   position: absolute;

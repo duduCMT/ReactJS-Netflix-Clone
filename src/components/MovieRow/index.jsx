@@ -27,10 +27,10 @@ export default function MovieRow({ title, items }) {
     <div className='movieRow'>
       <h2 className='movieRow__title'>{title}</h2>
       <div className="movieRow__left" onClick={handleLeftArrow}>
-        <NavigationBeforeIcon style={{ fontSize: 50 }} />
+        <NavigationBeforeIcon style={{ fontSize: 50 }} className='movieRow__arrow' />
       </div>
       <div className="movieRow__right" onClick={handleRightArrow}>
-        <NavigationNextIcon style={{ fontSize: 50 }} />
+        <NavigationNextIcon style={{ fontSize: 50 }} className='movieRow__arrow'/>
       </div>
       <div className="movieRow__list-area">
         <div className='movieRow__list' style={{
