@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { getMovieInfo } from '../../services/Tmdb'
 import Button from '../Button'
+import CircleIconButton from '../CircleIconButton'
 import Loading from '../Loading'
 
 import './styles.css'
@@ -52,6 +53,9 @@ export default function MovieModal({isOpen, closeModal, item}) {
             <div className='movie-modal__image-gradient'>
               <div className='movie-modal__buttons'>
                 <Button title="► Assistir" type="watch" />
+                <CircleIconButton iconName="add"/>
+                <CircleIconButton iconName="thumb_up_off_alt" size={20}/>
+                <CircleIconButton iconName="thumb_down_off_alt" size={20}/>
               </div>
             </div>
           </section>

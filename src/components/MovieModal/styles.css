@@ -50,7 +50,11 @@
 }
 
 .movie-modal__buttons {
-   
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  gap: 8px;
 }
 
 @media (max-width: 1024px) {

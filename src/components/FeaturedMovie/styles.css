@@ -52,6 +52,11 @@
   font-weight: bold;
 }
 
+.featured__buttons {
+  display: flex;
+  gap: 8px;
+}
+
 .featured__description {
   font-size: 18px;
   color: #999;

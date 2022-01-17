@@ -1,0 +1,17 @@
+.circle-button {
+  background-color: rgba(42,42,42,.6);
+  border-color: rgba(255,255,255,.5);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-button__icon {
+  color: rgba(255,255,255,.5);
+}
