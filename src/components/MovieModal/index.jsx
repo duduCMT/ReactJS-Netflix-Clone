@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import { getMovieInfo } from '../../services/Tmdb'
 import Button from '../Button'
 import CircleIconButton from '../CircleIconButton'
+import CloseButton from '../CloseButton'
 import Loading from '../Loading'
 
 import './styles.css'
@@ -51,6 +52,7 @@ export default function MovieModal({isOpen, closeModal, item}) {
             backgroundImage: `url(https://image.tmdb.org/t/p/original${movieInfo.backdrop_path})`
           }}>
             <div className='movie-modal__image-gradient'>
+              <CloseButton className="movie-modal__close" onClick={() => closeModal()}/>
               <div className='movie-modal__buttons'>
                 <Button title="► Assistir" type="watch" />
                 <CircleIconButton iconName="add"/>
@@ -62,7 +64,6 @@ export default function MovieModal({isOpen, closeModal, item}) {
           
           <h2>{movieInfo.name}</h2>
           <p>Modal Body</p>
-          <button onClick={() => closeModal()}>Close</button>
         </div>
         : <div className='movie-modal__loading'><Loading /></div>
       }

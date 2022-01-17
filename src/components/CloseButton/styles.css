@@ -1,0 +1,12 @@
+.close-button {
+  background-color: #181818;
+  color: #FFF;
+  height: 36px;
+  width: 36px;
+  border-width: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

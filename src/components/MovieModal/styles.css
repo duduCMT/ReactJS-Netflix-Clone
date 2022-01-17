@@ -35,7 +35,6 @@
   transition: all linear 1s; 
 }
 
-
 .movie-modal__image {
   height: 40vh;
   width: 100%;
@@ -44,9 +43,16 @@
 .movie-modal__image-gradient {
   width: inherit;
   height: inherit;
-  background: linear-gradient(to top, #111 10%, transparent 90%);
+  background: linear-gradient(to top, #171717 10%, transparent 90%);
   display: flex;
   align-items: flex-end;
+  position: relative;
+}
+
+.movie-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .movie-modal__buttons {
