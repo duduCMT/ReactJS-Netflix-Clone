@@ -65,7 +65,7 @@ export default function App() {
     <div className='page'>
       <Header black={blackHeader} />
 
-      { movieList.length != 0 && !showLoading ?
+      { movieList.length !== 0 && !showLoading ?
         <>
           {featuredData && <FeaturedMovie item={featuredData} />}
 
