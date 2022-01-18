@@ -1,6 +1,6 @@
 # Netflix Clone - ReactJS
-[![](https://img.shields.io/badge/license-MIT-green)]() 
-[![](https://img.shields.io/badge/version-0.0.1-yellow)](#) 
+[![](https://img.shields.io/badge/View-Veja%20voc%C3%AA%20mesmo-red)](duducmt.github.io/reactjs-netflix-clone/) 
+[![](https://img.shields.io/badge/version-0.0.1-yellow)](#)
 
 ## 📸 Preview
 
