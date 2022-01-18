@@ -53,12 +53,11 @@ async function getHomeList(){
   ]
 }
 
-
 async function getMovieInfo(id, type){
   return await basicFetch(`/${type}/${id}?${SOLICITATION_PARAMS}`)
 }
 
 export {
   getHomeList,
-  getMovieInfo
+  getMovieInfo,
 }

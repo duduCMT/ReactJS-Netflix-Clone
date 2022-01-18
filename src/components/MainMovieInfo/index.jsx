@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.css'
 
 export default function MainMovieInfo({info, fontSize}) {
-  const firstDate = new Date(info.first_air_date)
+  const firstDate =  new Date(info.first_air_date ? info.first_air_date : info.release_date)
   const relevance = info.vote_average * 10
 
   return (

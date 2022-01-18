@@ -9,7 +9,7 @@ import FeaturedMovie from './components/FeaturedMovie'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Loading from './components/Loading'
-import MovieModal from './components/MovieModal'
+import DetailsModal from './components/DetailsModal'
 
 Modal.setAppElement('#root')
 
@@ -76,7 +76,7 @@ export default function App() {
           </section>
 
           <Footer />
-          <MovieModal isOpen={modalMovie} closeModal={handleCloseMovieModal} item={itemModalMovie}/>
+          <DetailsModal isOpen={modalMovie} closeModal={handleCloseMovieModal} item={itemModalMovie}/>
         </>
         :
         <div className='loading__area'> <Loading /> </div>

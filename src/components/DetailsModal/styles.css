@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .movie-modal__content {
@@ -90,6 +91,13 @@
   margin: 0;
   line-height: 160%;
   font-size: 14px;
+}
+
+.movie-modal__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {

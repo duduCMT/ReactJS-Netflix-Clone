@@ -1,3 +1,4 @@
+import { Icon } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { getMovieInfo } from '../../services/Tmdb'
@@ -9,9 +10,10 @@ import MainMovieInfo from '../MainMovieInfo'
 
 import './styles.css'
 
-export default function MovieModal({isOpen, closeModal, item}) {
+export default function DetailsTvModal({isOpen, closeModal, item}) {
   const [movieInfo, setMovieInfo] = useState(null)
   const [showLoading, setShowLoading] = useState(true)
+  const [errorMenssage, setErrorMenssage] = useState(null)
 
   if(isOpen){
     document.body.style.overflow = 'hidden'
@@ -22,7 +24,15 @@ export default function MovieModal({isOpen, closeModal, item}) {
   useEffect(() => {
     async function loadCompleteItem(){
       let completeItemInfo = await getMovieInfo(item.id, 'tv')
-      console.log(completeItemInfo)
+
+      if(completeItemInfo.success === false){
+        completeItemInfo = await getMovieInfo(item.id, 'movie')
+
+        if(completeItemInfo.success != undefined && completeItemInfo.success === false){
+          setErrorMenssage('Informações Indisponíveis.')
+          return;
+        }
+      } 
       setMovieInfo(completeItemInfo)
     }
 
@@ -34,7 +44,7 @@ export default function MovieModal({isOpen, closeModal, item}) {
       () => setShowLoading(false), 
       2000
     )
-  }, [item])
+  }, [isOpen])
 
   return (
     <Modal 
@@ -42,6 +52,11 @@ export default function MovieModal({isOpen, closeModal, item}) {
       onRequestClose={closeModal}
       className="movie-modal"
       overlayClassName="movie-modal__overlay"
+      onAfterClose={() => {
+        setErrorMenssage(null)
+        setMovieInfo(null)
+        setShowLoading(true)
+      }}
       shouldFocusAfterRender={false}
     >
       {
@@ -50,7 +65,7 @@ export default function MovieModal({isOpen, closeModal, item}) {
           <section className='movie-modal__image' style={{
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${movieInfo.backdrop_path})`
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path ? item.backdrop_path : item.poster_path})`
           }}>
             <div className='movie-modal__image-gradient'>
               <CloseButton className="movie-modal__close" onClick={() => closeModal()}/>
@@ -65,32 +80,35 @@ export default function MovieModal({isOpen, closeModal, item}) {
           
           <section style={{display: "flex", paddingLeft: 32, paddingRight: 32, gap: 16}}>
             <section className='movie-modal__infoarea'>
-              <h2 className='movie-modal__title'>{movieInfo.name}</h2>
-              <MainMovieInfo info={movieInfo} fontSize={14} />
-              <p className='movie-modal__overview'>{movieInfo.overview}</p>
+              <h2 className='movie-modal__title'>{item.name ? item.name : item.title}</h2>
+              <MainMovieInfo info={item} fontSize={14} />
+              <p className='movie-modal__overview'>{item.overview ? item.overview : movieInfo.overview}</p>
             </section>
 
-            <asice className='movie-modal__castingarea'>
-              <p>
-                <span>Criado por: </span>
-                {movieInfo.created_by.map((value) => value.name).join(', ')}.
-              </p>
-
+            <aside className='movie-modal__castingarea'>
               <p>
                 <span>Gêneros: </span>
                 {movieInfo.genres.map((value) => value.name).join(', ')}.
               </p>
 
               <p>
-                <span>Disponível em: </span>
-                {movieInfo.networks.map((value) => value.name).join(', ')}.
+                <span>Produzido por: </span>
+                {movieInfo.production_companies.map((value) => value.name).join(', ')}.
               </p>
-            </asice>
+            </aside>
           </section>
           
           
         </div>
-        : <div className='movie-modal__loading'><Loading /></div>
+        : <div className='movie-modal__loading'>
+          { errorMenssage 
+          ? <section className='movie-modal__error'>
+              <CloseButton className='movie-modal__close' onClick={() => closeModal()}/>
+              <Icon style={{fontSize: 128, color: "#BB1D24"}}>error_outline</Icon>
+              <h2>{errorMenssage}</h2>
+            </section>
+          : <Loading />}
+        </div>
       }
       
     </Modal>  
