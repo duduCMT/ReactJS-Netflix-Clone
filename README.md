@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Netflix Clone - ReactJS
+[![](https://img.shields.io/badge/license-MIT-green)]() 
+[![](https://img.shields.io/badge/version-0.0.1-yellow)](#) 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📸 Preview
 
-## Available Scripts
+<div align="center">
+  <div style="display: flex; justify-content: center;">
+    <img src=".github/assets/img/preview01.png">
+  </div>
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
+## 📝 Descrição
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Aplicação desenvolvida com ReactJS que simula um clone dos principais layouts e funcionalidades de exibição de dados da Netflix.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🚀 Objetivo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esse projeto foi criado com o objetivo de praticar o desenvolvimento de layouts componentizados usando ReactJS. Além disso, foi possível explorar diferentes técnicas para consumo de APIs externas, no caso do projeto em questão foi utilizado a [The Movie Database](https://www.themoviedb.org/?language=pt-BR) para o consumo de dados relacionados a filmes e séries. 
 
-### `npm run build`
+## ✅ Features Funcionais
+- Loading Personalizado
+- Lista personalisada
+- Listagem de Filmes e Séries de diferentes classificações
+- Modal com mais detalhes da série ou filme
+- Responsividade para dispositivos móveis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ❌ Problemas e Limitações
+- A API [The Movie Database](https://www.themoviedb.org/?language=pt-BR) utiliza estratégias de bancos não relacionais. Por causa disso, alguns dados podem não serem retornados ao solicitados. Tentei ao máximo amenizar essas situações, mais ainda é possível acontecer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 📸 Componente de Listagem (Widescreen)
+<div align="center">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;">
+    <img src=".github/assets/img/gifs/preview01.gif" style="width: 90%">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  </div>
+</div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 Componente de Listagem (Mobile)
+<div align="center">
+  <img src=".github/assets/img/gifs/preview02.gif" style="height: 200px">
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📸 Visualização Widescreen
+<div align="center">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;">
+    <img src=".github/assets/img/preview01.png" style="width: 90%">
+    <img src=".github/assets/img/preview02.png" style="width: 90%">
+  </div>
+</div>
 
-## Learn More
+## 📸 Visualização Mobile
+<div align="center">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;">
+    <img src=".github/assets/img/preview03.png" style="height: 400px">
+  <img src=".github/assets/img/preview04.png" style="height: 400px">
+  <img src=".github/assets/img/preview05.png" style="height: 400px">
+  </div>
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

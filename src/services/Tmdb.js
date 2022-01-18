@@ -12,7 +12,7 @@ async function getHomeList(){
   return [
     {
       slug: 'originals',
-      title: 'Originais Netflix',
+      title: 'Séries Populares',
       items: await basicFetch(`/discover/tv?with_network=213&${SOLICITATION_PARAMS}`)
     },
     {
