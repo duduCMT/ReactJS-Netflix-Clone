@@ -10,7 +10,7 @@ import MainMovieInfo from '../MainMovieInfo'
 
 import './styles.css'
 
-export default function DetailsTvModal({isOpen, closeModal, item}) {
+export default function DetailsModal({isOpen, closeModal, item}) {
   const [movieInfo, setMovieInfo] = useState(null)
   const [showLoading, setShowLoading] = useState(true)
   const [errorMenssage, setErrorMenssage] = useState(null)
@@ -21,14 +21,21 @@ export default function DetailsTvModal({isOpen, closeModal, item}) {
     document.body.style.overflow = 'auto' 
   }
 
+  
+
+  setTimeout(
+    () => setShowLoading(false), 
+    2000
+  )
+
   useEffect(() => {
     async function loadCompleteItem(){
       let completeItemInfo = await getMovieInfo(item.id, 'tv')
-
+  
       if(completeItemInfo.success === false){
         completeItemInfo = await getMovieInfo(item.id, 'movie')
-
-        if(completeItemInfo.success != undefined && completeItemInfo.success === false){
+  
+        if(completeItemInfo.success !== undefined && completeItemInfo.success === false){
           setErrorMenssage('Informações Indisponíveis.')
           return;
         }
@@ -40,11 +47,7 @@ export default function DetailsTvModal({isOpen, closeModal, item}) {
       loadCompleteItem()
     }
 
-    setTimeout(
-      () => setShowLoading(false), 
-      2000
-    )
-  }, [isOpen])
+  }, [isOpen, item])
 
   return (
     <Modal 
